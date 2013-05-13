@@ -11,6 +11,7 @@ class FirstViewController < ContentViewController
   def viewDidLoad
     view.backgroundColor = UIColor.whiteColor
 
+    test = JSONStream.new
     label = UILabel.alloc.initWithFrame([[20,0],[300,50]])
     label.text = "First Controller"
     self.view.addSubview(label)
@@ -21,4 +22,5 @@ class FirstViewController < ContentViewController
     third = ThirdViewController.alloc.init if @third == nil
     navigationController.pushViewController(third, animated:true)    
   end
+
 end

@@ -1,5 +1,5 @@
 class ThirdViewController < ContentViewController
-  
+
   def loadView
      self.view = UIView.alloc.init
      self.title = 'Third Controller'
@@ -14,6 +14,7 @@ class ThirdViewController < ContentViewController
 
     label = UILabel.alloc.initWithFrame([[20,0],[300,50]])
     label.text = "Third Controller"
+
     self.view.addSubview(label)
   end
   
