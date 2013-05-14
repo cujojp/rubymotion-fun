@@ -11,7 +11,7 @@ class FirstViewController < ContentViewController
   def viewDidLoad
     view.backgroundColor = UIColor.whiteColor
 
-    test = JSONStream.new
+    test = Square.get_locations
     label = UILabel.alloc.initWithFrame([[20,0],[300,50]])
     label.text = "First Controller"
     self.view.addSubview(label)
