@@ -9,6 +9,7 @@ class AppDelegate
     # firstContainer is the first stack of controllers: it contains FirstViewController and ThirdViewController
     @firstContainer = UINavigationController.alloc.initWithRootViewController(FirstViewController.alloc.init)
     
+    
     # contentViewController is the owner of the visibile container of controllers
     # application starts with firstContainer as a first page
     @contentViewController = @firstContainer

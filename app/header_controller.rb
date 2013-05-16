@@ -1,4 +1,0 @@
-class HeaderController < UITableViewHeaderFooterView
-
-
-end
