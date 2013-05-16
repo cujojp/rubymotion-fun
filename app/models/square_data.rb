@@ -20,21 +20,28 @@ class Square
     }
   end
 
-  def self.get_geo 
-    #TODO: `result` is returning cllocation but I cannot parse it
+  def self.get_geo()
+
     BW::Location.get do |result|
       BW::Location.stop
-      puts "From Lat #{result[:to].latitude}, From Long: #{result[:to].longitude}".yellow
-      @geoLocation = result
+      @latitude = result[:to].latitude
+      @longitude = result[:to].longitude
+
+      @@geolocation = {
+        :lattitude => @latitude, 
+        :@longitude => @longitude
+      }
     end
   end
 
 
   def self.find(query, &block)
 
-    if @geoLocation then query = @geoLocation end
+    if @latitude && @longitude
+      query = "?ll=#{@latitude},#{@longitude}"
+    end
 
-    puts "#{query}".green
+    puts "#{@geolocation}".green
 
     @host = DEFAULTS[:host]
     @path = DEFAULTS[:path]

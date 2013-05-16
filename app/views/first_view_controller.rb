@@ -12,7 +12,7 @@ class FirstViewController < ContentViewController
   def viewDidLoad
     view.backgroundColor = UIColor.whiteColor
 
-    @location = 90210
+    @location = Square.get_geo()
     @result = 'test'  
     posLeft = 20 
     width = (self.view.size.width - (posLeft*2))
@@ -24,7 +24,7 @@ class FirstViewController < ContentViewController
     @text_field.borderStyle = UITextBorderStyleRoundedRect
     self.view.addSubview(@text_field)
 
-    Square.get_geo()
+    puts "#{@location}".blue
 
     Square.find(@location) do |color|
       if color.nil?
